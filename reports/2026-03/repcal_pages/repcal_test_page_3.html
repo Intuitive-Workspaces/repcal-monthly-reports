@@ -1,0 +1,59 @@
+<!doctype html><html><head><meta charset="utf-8"><meta charset="utf-8"><title>Repcal test Report</title><style>
+body { font-family: Arial, Helvetica, sans-serif; margin: 0; color: #163343; background:#eef4f6; }
+.page { width: 1120px; min-height: 1530px; margin: 0 auto 24px auto; background: white; position: relative; box-sizing: border-box; padding: 48px 54px 80px 54px; page-break-after: always; }
+.header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom: 28px; }
+.brand { color:#0b8f87; font-weight:700; font-size:42px; letter-spacing:0.5px; }
+.brand small { display:block; color:#68828d; font-size:16px; font-weight:600; margin-top:4px; }
+.page-tag { background:#0b8f87; color:white; padding:10px 16px; border-radius:22px; font-size:14px; font-weight:700; }
+h1 { font-size:34px; margin:0 0 6px 0; color:#163343; }
+.subtitle { color:#5e7680; font-size:17px; margin-bottom:22px; }
+.section-title { background:#0f8f87; color:#fff; padding:10px 16px; border-radius:8px; font-weight:700; margin:22px 0 14px; font-size:17px; }
+.status { display:inline-block; padding:16px 28px; border-radius:12px; font-size:28px; font-weight:800; letter-spacing:1px; }
+.fail { background:#fbe4e6; color:#b2293a; }
+.pass { background:#e4f4ea; color:#1c7c46; }
+.details { display:grid; grid-template-columns: 1fr 1fr; gap:12px 28px; font-size:16px; }
+.detail { background:#f4f7f8; border-radius:10px; padding:12px 14px; }
+.detail b { display:block; color:#5e7680; font-size:13px; margin-bottom:5px; text-transform:uppercase; letter-spacing:0.3px; }
+.cards { display:grid; grid-template-columns: repeat(4, 1fr); gap:14px; margin-top:10px; }
+.card { background:#f4f7f8; border-radius:12px; padding:16px; min-height:88px; }
+.card .label { color:#5e7680; font-size:13px; text-transform:uppercase; font-weight:700; }
+.card .value { margin-top:12px; font-size:28px; font-weight:800; color:#163343; }
+.note { background:#f7fbfb; border-left:5px solid #0f8f87; padding:16px 18px; border-radius:8px; line-height:1.5; font-size:16px; }
+.footer { position:absolute; bottom:24px; left:54px; right:54px; display:flex; justify-content:space-between; color:#6e8791; font-size:14px; border-top:1px solid #dde6ea; padding-top:12px; }
+.chartbox { border:1px solid #d7e4e8; border-radius:14px; padding:16px; background:#fbfdfd; }
+svg { width:100%; height:auto; }
+table { width:100%; border-collapse:collapse; font-size:15px; }
+th, td { border-bottom:1px solid #dbe6ea; padding:10px 8px; text-align:left; vertical-align:top; }
+th { color:#5e7680; text-transform:uppercase; font-size:12px; letter-spacing:0.4px; }
+.kpi-strip { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+.checklist li { margin-bottom:10px; }
+.small { font-size:14px; color:#6a8089; }
+.two-col { display:grid; grid-template-columns: 1.2fr 0.8fr; gap:20px; align-items:start; }
+a { color:#0b8f87; text-decoration:none; }
+</style></head><body><section class="page">
+<div class="header"><div><div class="brand">SMART<small>Smartm2m Compliance Support</small></div></div><div class="page-tag">PAGE 03</div></div>
+<h1>Excursion Review</h1>
+<div class="subtitle">Repcal Test Lab — 1st floor — Repcal test</div>
+<div class="section-title">Out-of-range Events</div>
+<table><thead><tr><th>Start</th><th>End</th><th>Duration</th><th>Type</th><th>Peak</th></tr></thead><tbody><tr><td>01 Mar 2026 15:46 UTC</td><td>01 Mar 2026 17:01 UTC</td><td>75.0 min</td><td>Above</td><td>25.4°C</td></tr><tr><td>05 Mar 2026 15:46 UTC</td><td>05 Mar 2026 17:16 UTC</td><td>90.0 min</td><td>Above</td><td>25.5°C</td></tr><tr><td>09 Mar 2026 12:00 UTC</td><td>10 Mar 2026 01:30 UTC</td><td>810.0 min</td><td>Above</td><td>27.1°C</td></tr><tr><td>10 Mar 2026 02:30 UTC</td><td>10 Mar 2026 02:45 UTC</td><td>15.0 min</td><td>Above</td><td>25.1°C</td></tr><tr><td>10 Mar 2026 03:15 UTC</td><td>10 Mar 2026 04:15 UTC</td><td>60.0 min</td><td>Above</td><td>25.1°C</td></tr><tr><td>10 Mar 2026 05:15 UTC</td><td>10 Mar 2026 06:00 UTC</td><td>45.0 min</td><td>Above</td><td>25.1°C</td></tr><tr><td>10 Mar 2026 09:00 UTC</td><td>17 Mar 2026 08:45 UTC</td><td>10064.5 min</td><td>Above</td><td>30.5°C</td></tr></tbody></table>
+<div class="small" style="margin-top:10px;">Showing first 7 of 12 excursion events detected in the full dataset.</div>
+<div class="two-col" style="margin-top:20px;">
+<div>
+<div class="section-title">Audit Summary</div>
+<div class="note">Configured range: <b>20°C to 25°C</b>. Highest recorded temperature: <b>30.5°C</b>. Excursion events detected: <b>12</b>. Longest single excursion: <b>10064.5 minutes</b>. Total out-of-range readings: <b>901</b>. 8 sampling gaps were detected and should be investigated. The monitored area should be treated as non-conforming unless site review provides a documented justification.</div>
+<div class="section-title">Regulatory Notes</div>
+<div class="note">This assessment was performed against the configured ambient acceptance range of 20°C to 25°C. Excursions outside the approved limit require site review and corrective documentation. Continuous electronic monitoring supports routine compliance checks, but maintenance, calibration, and environmental context should be attached to the final record.</div>
+</div>
+<div>
+<div class="section-title">Status</div>
+<div class="status fail">FAIL</div>
+<div class="cards" style="grid-template-columns:1fr; margin-top:16px;">
+<div class="card"><div class="label">Average / MKT</div><div class="value">24.8°C</div></div>
+<div class="card"><div class="label">Total Excursion Time</div><div class="value">13334.5 min</div></div>
+<div class="card"><div class="label">Readings in Compliance</div><div class="value">69.1%</div></div>
+<div class="card"><div class="label">Data Gaps</div><div class="value">8</div></div>
+</div>
+</div>
+</div>
+<div class="footer"><div>Need assistance? Compliance@smartm2m.co.za</div><div>Excursion Review</div></div>
+</section></body></html>
