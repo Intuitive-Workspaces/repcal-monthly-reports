@@ -1,0 +1,147 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Repcal test Report</title><style>
+body { font-family: Arial, Helvetica, sans-serif; margin: 0; color: #163343; background:#eef4f6; }
+.page { width: 1120px; min-height: 1530px; margin: 0 auto 24px auto; background: white; position: relative; box-sizing: border-box; padding: 48px 54px 80px 54px; page-break-after: always; }
+.header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom: 28px; }
+.brand { color:#0b8f87; font-weight:700; font-size:42px; letter-spacing:0.5px; }
+.brand small { display:block; color:#68828d; font-size:16px; font-weight:600; margin-top:4px; }
+.page-tag { background:#0b8f87; color:white; padding:10px 16px; border-radius:22px; font-size:14px; font-weight:700; }
+h1 { font-size:34px; margin:0 0 6px 0; color:#163343; }
+.subtitle { color:#5e7680; font-size:17px; margin-bottom:22px; }
+.section-title { background:#0f8f87; color:#fff; padding:10px 16px; border-radius:8px; font-weight:700; margin:22px 0 14px; font-size:17px; }
+.status { display:inline-block; padding:16px 28px; border-radius:12px; font-size:28px; font-weight:800; letter-spacing:1px; }
+.fail { background:#fbe4e6; color:#b2293a; }
+.pass { background:#e4f4ea; color:#1c7c46; }
+.details { display:grid; grid-template-columns: 1fr 1fr; gap:12px 28px; font-size:16px; }
+.detail { background:#f4f7f8; border-radius:10px; padding:12px 14px; }
+.detail b { display:block; color:#5e7680; font-size:13px; margin-bottom:5px; text-transform:uppercase; letter-spacing:0.3px; }
+.cards { display:grid; grid-template-columns: repeat(4, 1fr); gap:14px; margin-top:10px; }
+.card { background:#f4f7f8; border-radius:12px; padding:16px; min-height:88px; }
+.card .label { color:#5e7680; font-size:13px; text-transform:uppercase; font-weight:700; }
+.card .value { margin-top:12px; font-size:28px; font-weight:800; color:#163343; }
+.note { background:#f7fbfb; border-left:5px solid #0f8f87; padding:16px 18px; border-radius:8px; line-height:1.5; font-size:16px; }
+.footer { position:absolute; bottom:24px; left:54px; right:54px; display:flex; justify-content:space-between; color:#6e8791; font-size:14px; border-top:1px solid #dde6ea; padding-top:12px; }
+.chartbox { border:1px solid #d7e4e8; border-radius:14px; padding:16px; background:#fbfdfd; }
+svg { width:100%; height:auto; }
+table { width:100%; border-collapse:collapse; font-size:15px; }
+th, td { border-bottom:1px solid #dbe6ea; padding:10px 8px; text-align:left; vertical-align:top; }
+th { color:#5e7680; text-transform:uppercase; font-size:12px; letter-spacing:0.4px; }
+.kpi-strip { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+.checklist li { margin-bottom:10px; }
+.small { font-size:14px; color:#6a8089; }
+.two-col { display:grid; grid-template-columns: 1.2fr 0.8fr; gap:20px; align-items:start; }
+a { color:#0b8f87; text-decoration:none; }
+</style></head><body>
+<section class="page">
+<div class="header"><div><div class="brand">SMART<small>Smartm2m Compliance Support</small></div></div><div class="page-tag">PAGE 01</div></div>
+<h1>Executive Compliance Overview</h1>
+<div class="subtitle">Reporting period: 27 Apr 2026 – 03 May 2026</div>
+<div class="section-title">Overall Compliance Status</div>
+<div class="status fail">FAIL</div>
+<p class="note" style="margin-top:14px;">The monitored area <b>Repcal test</b> in <b>Repcal Test Lab</b> did not maintain the required <b>20°C to 25°C</b> range for the reporting period 27 Apr 2026 – 03 May 2026. Excursions outside the acceptable band were detected and should be reviewed against HVAC performance, occupancy patterns, door openings, and any operational changes.</p>
+<div class="section-title">Report Details</div>
+<div class="details">
+<div class="detail"><b>Sensor Name</b>Repcal test</div>
+<div class="detail"><b>Sensor ID</b>08252549</div>
+<div class="detail"><b>Sampling Interval</b>Approx. 15.0 minutes</div>
+<div class="detail"><b>Storage Class</b>Ambient Controlled Space (20°C to 25°C)</div>
+<div class="detail"><b>Readings Reviewed</b>672</div>
+<div class="detail"><b>Data Gaps</b>None</div>
+</div>
+<div class="section-title">KPI Summary</div>
+<div class="cards">
+<div class="card"><div class="label">Minimum</div><div class="value">17.0°C</div></div>
+<div class="card"><div class="label">Maximum</div><div class="value">20.3°C</div></div>
+<div class="card"><div class="label">Average</div><div class="value">19.1°C</div></div>
+<div class="card"><div class="label">MKT</div><div class="value">19.1°C</div></div>
+<div class="card"><div class="label">Readings In Range</div><div class="value">7.4%</div></div>
+<div class="card"><div class="label">High Excursions</div><div class="value">0</div></div>
+<div class="card"><div class="label">Low Excursions</div><div class="value">622</div></div>
+<div class="card"><div class="label">Longest Excursion</div><div class="value">9329.6 min</div></div>
+</div>
+<div class="section-title">Summary Interpretation</div>
+<div class="note">A total of <b>672</b> readings were reviewed for Repcal test. Temperatures ranged from <b>17.0°C</b> to <b>20.3°C</b>, with an average monthly temperature of <b>19.1°C</b>. Overall compliance to the configured 20°C–25°C range was <b>7.4%</b>. The dataset contains <b>1</b> excursion events with total excursion time of <b>9329.6 minutes</b>.</div>
+<div class="section-title">Recommended Next Action</div>
+<div class="note">Review the flagged excursion periods against HVAC setpoints, occupancy activity, local heat loads, and any maintenance or calibration records. The detected data gaps should also be checked before this report is filed as final evidence.</div>
+<div class="footer"><div>Need assistance? Compliance@smartm2m.co.za</div><div>Temperature Monitoring Compliance Report</div></div>
+</section>
+
+<section class="page">
+<div class="header"><div><div class="brand">SMART<small>Smartm2m Compliance Support</small></div></div><div class="page-tag">PAGE 02</div></div>
+<h1>Temperature Trend Analysis</h1>
+<div class="subtitle">Repcal test — Sensor 08252549</div>
+<div class="chartbox"><svg viewBox="0 0 980 340" aria-label="temperature trend">
+      <rect x="0" y="0" width="980" height="340" fill="#fbfdfd" rx="12"/>
+      <rect x="58" y="55.5" width="900" height="157.7" fill="#dff3ea" opacity="0.9"/>
+      <line x1="58" y1="307.9" x2="958" y2="307.9" stroke="#e3ecef" stroke-width="1" /><text x="10" y="311.9" font-size="12" fill="#68828d">17°C</text><line x1="58" y1="213.3" x2="958" y2="213.3" stroke="#e3ecef" stroke-width="1" /><text x="10" y="217.3" font-size="12" fill="#68828d">20°C</text><line x1="58" y1="134.4" x2="958" y2="134.4" stroke="#e3ecef" stroke-width="1" /><text x="10" y="138.4" font-size="12" fill="#68828d">22°C</text><line x1="58" y1="55.5" x2="958" y2="55.5" stroke="#e3ecef" stroke-width="1" /><text x="10" y="59.5" font-size="12" fill="#68828d">25°C</text><line x1="58" y1="24.0" x2="958" y2="24.0" stroke="#e3ecef" stroke-width="1" /><text x="10" y="28.0" font-size="12" fill="#68828d">26°C</text>
+      <line x1="58" y1="213.3" x2="958" y2="213.3" stroke="#1c7c46" stroke-width="2" stroke-dasharray="6 4"/>
+      <line x1="58" y1="55.5" x2="958" y2="55.5" stroke="#1c7c46" stroke-width="2" stroke-dasharray="6 4"/>
+      <path d="M58.0,250.7 L122.3,254.0 L186.6,240.4 L250.9,266.5 L315.1,246.4 L379.4,261.4 L443.7,240.6 L508.0,257.3 L572.3,241.5 L636.6,241.1 L700.9,235.4 L765.1,238.6 L829.4,228.3 L893.7,217.8 L958.0,203.9" fill="none" stroke="#0f8f87" stroke-width="3"/>
+      <text x="58.0" y="330" font-size="12" text-anchor="middle" fill="#68828d">04-26</text><text x="186.6" y="330" font-size="12" text-anchor="middle" fill="#68828d">04-27</text><text x="315.1" y="330" font-size="12" text-anchor="middle" fill="#68828d">04-28</text><text x="443.7" y="330" font-size="12" text-anchor="middle" fill="#68828d">04-29</text><text x="572.3" y="330" font-size="12" text-anchor="middle" fill="#68828d">04-30</text><text x="700.9" y="330" font-size="12" text-anchor="middle" fill="#68828d">05-01</text><text x="829.4" y="330" font-size="12" text-anchor="middle" fill="#68828d">05-02</text><text x="958.0" y="330" font-size="12" text-anchor="middle" fill="#68828d">05-03</text>
+      <text x="490.0" y="18" text-anchor="middle" font-size="15" fill="#163343" font-weight="700">Temperature Profile - Configured Range 20°C to 25°C</text>
+    </svg></div>
+<div class="cards" style="grid-template-columns: repeat(3, 1fr); margin-top:18px;">
+<div class="card"><div class="label">Configured Range</div><div class="value">20°C - 25°C</div></div>
+<div class="card"><div class="label">Highest Reading</div><div class="value">20.3°C</div></div>
+<div class="card"><div class="label">Average / MKT</div><div class="value">19.1°C</div></div>
+</div>
+<div class="section-title">Graph Interpretation</div>
+<div class="note">The chart plots 27 Apr 2026 – 03 May 2026 average 12-hour temperature values for Repcal test. The green band represents the configured ambient compliance range of 20°C to 25°C. The profile shows repeated excursions above the upper threshold and a brief excursion below the lower threshold, with a peak of <b>20.3°C</b>. This pattern suggests intermittent temperature instability that should be reviewed operationally.</div>
+<div class="footer"><div>Need assistance? Compliance@smartm2m.co.za</div><div>Temperature Trend Analysis</div></div>
+</section>
+
+<section class="page">
+<div class="header"><div><div class="brand">SMART<small>Smartm2m Compliance Support</small></div></div><div class="page-tag">PAGE 03</div></div>
+<h1>Excursion Review</h1>
+<div class="subtitle">Repcal Test Lab — 1st floor — Repcal test</div>
+<div class="section-title">Out-of-range Events</div>
+<table><thead><tr><th>Start</th><th>End</th><th>Duration</th><th>Type</th><th>Peak</th></tr></thead><tbody><tr><td>26 Apr 2026 22:12 UTC</td><td>03 May 2026 09:27 UTC</td><td>9329.6 min</td><td>Below</td><td>17.0°C</td></tr></tbody></table>
+<div class="small" style="margin-top:10px;">Showing first 1 of 1 excursion events detected in the full dataset.</div>
+<div class="two-col" style="margin-top:20px;">
+<div>
+<div class="section-title">Audit Summary</div>
+<div class="note">Configured range: <b>20°C to 25°C</b>. Highest recorded temperature: <b>20.3°C</b>. Excursion events detected: <b>1</b>. Longest single excursion: <b>9329.6 minutes</b>. Total out-of-range readings: <b>622</b>. No sampling gaps detected. The monitored area should be treated as non-conforming unless site review provides a documented justification.</div>
+<div class="section-title">Regulatory Notes</div>
+<div class="note">This assessment was performed against the configured ambient acceptance range of 20°C to 25°C. Excursions outside the approved limit require site review and corrective documentation. Continuous electronic monitoring supports routine compliance checks, but maintenance, calibration, and environmental context should be attached to the final record.</div>
+</div>
+<div>
+<div class="section-title">Status</div>
+<div class="status fail">FAIL</div>
+<div class="cards" style="grid-template-columns:1fr; margin-top:16px;">
+<div class="card"><div class="label">Average / MKT</div><div class="value">19.1°C</div></div>
+<div class="card"><div class="label">Total Excursion Time</div><div class="value">9329.6 min</div></div>
+<div class="card"><div class="label">Readings in Compliance</div><div class="value">7.4%</div></div>
+<div class="card"><div class="label">Data Gaps</div><div class="value">0</div></div>
+</div>
+</div>
+</div>
+<div class="footer"><div>Need assistance? Compliance@smartm2m.co.za</div><div>Excursion Review</div></div>
+</section>
+
+<section class="page">
+<div class="header"><div><div class="brand">SMART<small>Smartm2m Compliance Support</small></div></div><div class="page-tag">PAGE 04</div></div>
+<h1>Final Compliance Conclusion</h1>
+<div class="section-title">Final Verdict</div>
+<div class="status fail">FAIL</div>
+<p class="note" style="margin-top:14px;">The monitored area <b>Repcal test</b> did not maintain the configured 20°C to 25°C range throughout 27 Apr 2026 – 03 May 2026. This report should be filed as a failed ambient storage profile pending site investigation, data-gap review, and documented quality disposition.</p>
+<div class="section-title">Compliance Checklist</div>
+<ul class="note checklist"><li>Configured limits applied to all reviewed readings</li><li>Upper and lower thresholds shown on the trend graph</li><li>Average monthly temperature reviewed</li><li>High-side and low-side excursions identified</li><li>Data gaps flagged for review</li><li>Sensor maintenance or calibration record should be attached to file</li><li>Operational context should be attached for excursion review</li></ul>
+<div class="section-title">Sign-off & Document Control</div>
+<div class="details">
+<div class="detail"><b>Prepared By</b>Smartm2m Compliance Support</div>
+<div class="detail"><b>Reviewed By</b>________________________</div>
+<div class="detail"><b>Approved By</b>________________________</div>
+<div class="detail"><b>Date</b>________________________</div>
+<div class="detail"><b>Client Reference</b>Repcal Test Lab / Repcal test</div>
+<div class="detail"><b>Calibration / Maintenance Ref</b>________________________</div>
+<div class="detail" style="grid-column:1 / span 2;"><b>Comments / CAPA Reference</b>Site investigation required for out-of-range excursions and data-gap review.</div>
+</div>
+<div class="section-title">Document Summary</div>
+<div class="kpi-strip">
+<div class="card"><div class="label">Readings Reviewed</div><div class="value">672</div></div>
+<div class="card"><div class="label">Readings In Range</div><div class="value">7.4%</div></div>
+<div class="card"><div class="label">Total Excursion Time</div><div class="value">9329.6 min</div></div>
+<div class="card"><div class="label">Data Gaps</div><div class="value">0</div></div>
+</div>
+<div class="footer"><div>Need assistance? Compliance@smartm2m.co.za</div><div>Final Compliance Conclusion</div></div>
+</section>
+</body></html>
