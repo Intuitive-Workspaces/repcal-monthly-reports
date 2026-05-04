@@ -47,7 +47,14 @@ th { color:#526582; text-transform:uppercase; font-size:12px; letter-spacing:0.4
 .small { font-size:14px; color:#6a778d; }
 .two-col { display:grid; grid-template-columns: 1.2fr 0.8fr; gap:20px; align-items:start; }
 a { color:#1267d8; text-decoration:none; font-weight:700; }
-</style></head><body>
+.signoff-box { border:1px solid #dfe6f0; border-radius:0 0 10px 10px; padding:22px 24px; background:#fff; display:grid; grid-template-columns:1fr auto; gap:16px; align-items:center; }
+.signoff-status { color:#3c4c68; font-size:14px; line-height:1.55; }
+.signoff-status strong { color:#13285f; }
+.signoff-button { background:#10296b; color:#fff; border:0; border-radius:10px; padding:14px 20px; font-weight:800; cursor:pointer; box-shadow:0 2px 6px rgba(16,41,107,.2); }
+.signoff-button:hover { background:#1267d8; }
+.signoff-reset { background:#f5f7fb; color:#526582; border:1px solid #dfe6f0; border-radius:10px; padding:12px 16px; font-weight:700; cursor:pointer; }
+@media print { .signoff-button, .signoff-reset { display:none; } }
+</style></head><body data-sensor-id="08254696">
 <section class="page">
 <div class="header"><div class="brand"><img class="smart-logo" src="assets/smartm2m_logo.png" alt="SMART"><div class="brand-divider"></div><div class="brand-title">Temperature Monitoring<br>Compliance Report<small>Executive summary, compliance status & key metrics</small></div></div><div class="page-tag"><small>PAGE</small>01</div></div>
 <h1>Executive Compliance Overview</h1>
@@ -145,12 +152,15 @@ a { color:#1267d8; text-decoration:none; font-weight:700; }
 <div class="section-title">Sign-off & Document Control</div>
 <div class="details">
 <div class="detail"><b>Prepared By</b>Smartm2m Compliance Support</div>
-<div class="detail"><b>Reviewed By</b>________________________</div>
-<div class="detail"><b>Approved By</b>________________________</div>
-<div class="detail"><b>Date</b>________________________</div>
 <div class="detail"><b>Client Reference</b>Repcal Test Lab / Pharmacy</div>
 <div class="detail"><b>Calibration / Maintenance Ref</b>________________________</div>
-<div class="detail" style="grid-column:1 / span 2;"><b>Comments / CAPA Reference</b>Site investigation required for out-of-range excursions and data-gap review.</div>
+<div class="detail"><b>CAPA Reference</b>________________________</div>
+<div class="detail" style="grid-column:1 / span 2;"><b>Comments</b>Site investigation required for out-of-range excursions and data-gap review.</div>
+</div>
+<div class="section-title">Digital Sign-off</div>
+<div class="signoff-box">
+<div id="signoff-status" class="signoff-status"><strong>Not signed yet.</strong><br>Click the sign-off button to record reviewer name and timestamp on this browser.</div>
+<div><button class="signoff-button" onclick="signReport()">Click to sign off</button> <button class="signoff-reset" onclick="clearSignoff()">Clear</button></div>
 </div>
 <div class="section-title">Document Summary</div>
 <div class="kpi-strip">
@@ -161,4 +171,39 @@ a { color:#1267d8; text-decoration:none; font-weight:700; }
 </div>
 <div class="footer"><div>Need assistance? Compliance@smartm2m.co.za</div><div>Final Compliance Conclusion</div></div>
 </section>
+
+<script>
+(function () {
+  const key = 'repcal-signoff-' + document.body.dataset.sensorId;
+  function render() {
+    const target = document.getElementById('signoff-status');
+    if (!target) return;
+    const raw = localStorage.getItem(key);
+    if (!raw) {
+      target.innerHTML = '<strong>Not signed yet.</strong><br>Click the sign-off button to record reviewer name and timestamp on this browser.';
+      return;
+    }
+    const sig = JSON.parse(raw);
+    target.innerHTML = '<strong>Digitally signed off</strong><br>Signed by: ' + escapeHtml(sig.name) + '<br>Date/time: ' + escapeHtml(sig.time) + '<br>Report: ' + escapeHtml(sig.report);
+  }
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; });
+  }
+  window.signReport = function () {
+    const name = prompt('Enter name for sign-off:');
+    if (!name || !name.trim()) return;
+    const sig = { name: name.trim(), time: new Date().toLocaleString(), report: document.title };
+    localStorage.setItem(key, JSON.stringify(sig));
+    render();
+  };
+  window.clearSignoff = function () {
+    if (confirm('Clear this sign-off on this browser?')) {
+      localStorage.removeItem(key);
+      render();
+    }
+  };
+  document.addEventListener('DOMContentLoaded', render);
+})();
+</script>
+
 </body></html>
