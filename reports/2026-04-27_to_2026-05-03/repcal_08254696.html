@@ -1,38 +1,53 @@
 <!doctype html><html><head><meta charset="utf-8"><title>Pharmacy Report</title><style>
-body { font-family: Arial, Helvetica, sans-serif; margin: 0; color: #163343; background:#eef4f6; }
-.page { width: 1120px; min-height: 1530px; margin: 0 auto 24px auto; background: white; position: relative; box-sizing: border-box; padding: 48px 54px 80px 54px; page-break-after: always; }
+body { font-family: Arial, Helvetica, sans-serif; margin: 0; color: #1b2d4f; background:#f2f5fb; }
+.page { width: 1120px; min-height: 1530px; margin: 0 auto 24px auto; background: #ffffff; position: relative; box-sizing: border-box; padding: 34px 34px 92px 34px; page-break-after: always; overflow:hidden; }
+.page:after { content:""; position:absolute; left:-80px; right:-80px; bottom:92px; height:120px; border-top:8px solid #1687ee; border-radius:50% 50% 0 0; transform:rotate(-2deg); opacity:.95; pointer-events:none; }
 .header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom: 28px; }
-.brand { color:#0b8f87; font-weight:700; font-size:42px; letter-spacing:0.5px; }
-.brand small { display:block; color:#68828d; font-size:16px; font-weight:600; margin-top:4px; }
-.page-tag { background:#0b8f87; color:white; padding:10px 16px; border-radius:22px; font-size:14px; font-weight:700; }
-h1 { font-size:34px; margin:0 0 6px 0; color:#163343; }
-.subtitle { color:#5e7680; font-size:17px; margin-bottom:22px; }
-.section-title { background:#0f8f87; color:#fff; padding:10px 16px; border-radius:8px; font-weight:700; margin:22px 0 14px; font-size:17px; }
-.status { display:inline-block; padding:16px 28px; border-radius:12px; font-size:28px; font-weight:800; letter-spacing:1px; }
-.fail { background:#fbe4e6; color:#b2293a; }
-.pass { background:#e4f4ea; color:#1c7c46; }
-.details { display:grid; grid-template-columns: 1fr 1fr; gap:12px 28px; font-size:16px; }
-.detail { background:#f4f7f8; border-radius:10px; padding:12px 14px; }
-.detail b { display:block; color:#5e7680; font-size:13px; margin-bottom:5px; text-transform:uppercase; letter-spacing:0.3px; }
-.cards { display:grid; grid-template-columns: repeat(4, 1fr); gap:14px; margin-top:10px; }
-.card { background:#f4f7f8; border-radius:12px; padding:16px; min-height:88px; }
-.card .label { color:#5e7680; font-size:13px; text-transform:uppercase; font-weight:700; }
-.card .value { margin-top:12px; font-size:28px; font-weight:800; color:#163343; }
-.note { background:#f7fbfb; border-left:5px solid #0f8f87; padding:16px 18px; border-radius:8px; line-height:1.5; font-size:16px; }
-.footer { position:absolute; bottom:24px; left:54px; right:54px; display:flex; justify-content:space-between; color:#6e8791; font-size:14px; border-top:1px solid #dde6ea; padding-top:12px; }
-.chartbox { border:1px solid #d7e4e8; border-radius:14px; padding:16px; background:#fbfdfd; }
+.brand { display:flex; align-items:center; gap:30px; }
+.smart-logo { width: 280px; height:auto; display:block; }
+.brand-divider { width:2px; height:92px; background:#3b76e8; opacity:.75; }
+.brand-title { color:#13285f; font-weight:800; font-size:29px; line-height:1.05; max-width:390px; }
+.brand-title small { display:block; color:#ef3f5c; font-size:9px; font-weight:600; margin-top:12px; border-top:5px solid #ef3f5c; width:170px; padding-top:5px; letter-spacing:.2px; }
+.page-tag { background:#11296b; color:white; padding:18px 20px; border-radius:14px; font-size:26px; font-weight:800; min-width:58px; text-align:center; line-height:1.05; box-shadow:0 2px 8px rgba(12,37,100,.15); }
+.page-tag small { display:block; font-size:9px; letter-spacing:.8px; margin-bottom:6px; }
+h1 { font-size:38px; margin:0 0 6px 22px; color:#13285f; font-weight:800; letter-spacing:.2px; }
+.subtitle { color:#5e6c86; font-size:14px; margin:0 0 22px 174px; font-weight:700; }
+h1 + .subtitle:before { content:""; display:inline-block; width:138px; height:5px; background:#ef3f5c; border-radius:4px; position:absolute; margin-left:-160px; margin-top:7px; }
+.section-title { background:#10296b; color:#fff; padding:13px 22px; border-radius:8px 8px 0 0; font-weight:800; margin:22px 0 0; font-size:14px; letter-spacing:.7px; text-transform:uppercase; }
+.status { display:inline-block; padding:20px 30px; border-radius:12px; font-size:31px; font-weight:800; letter-spacing:.3px; }
+.fail { background:#ffe7ec; color:#ef3f5c; border:1px solid #ef9bad; }
+.pass { background:#e5f7ef; color:#06a76d; border:1px solid #73d5ac; }
+.details { display:grid; grid-template-columns: 1fr 1fr; gap:0 70px; font-size:14px; background:#fff; border:1px solid #dfe6f0; border-top:0; border-radius:0 0 10px 10px; padding:28px 22px; }
+.detail { background:#fff; border-radius:0; padding:11px 0; color:#3b4d6b; }
+.detail b { display:inline-block; color:#596987; font-size:12px; margin-right:28px; min-width:150px; text-transform:none; letter-spacing:0; font-weight:800; }
+.cards { display:grid; grid-template-columns: repeat(4, 1fr); gap:24px; margin-top:24px; }
+.card { background:#ffffff; border:1px solid #dfe6f0; border-radius:12px; padding:20px 18px 18px 74px; min-height:88px; position:relative; box-shadow:0 2px 5px rgba(22,45,91,.04); }
+.card:before { content:""; position:absolute; left:0; top:0; bottom:0; width:54px; border-radius:12px 0 0 12px; background:#1267d8; }
+.card:after { content:""; position:absolute; left:21px; top:39px; width:18px; height:18px; border:3px solid white; border-radius:50%; box-sizing:border-box; }
+.cards .card:nth-child(2):before, .cards .card:nth-child(6):before { background:#ef3f5c; }
+.cards .card:nth-child(3):before { background:#8657e8; }
+.cards .card:nth-child(4):before, .cards .card:nth-child(8):before { background:#ff8b2c; }
+.cards .card:nth-child(5):before { background:#05a76d; }
+.card .label { color:#22375f; font-size:12px; font-weight:800; }
+.card .value { margin-top:16px; font-size:29px; font-weight:800; color:#13285f; }
+.note { background:#ffffff; border:1px solid #dfe6f0; border-radius:10px; padding:22px 24px; line-height:1.65; font-size:14px; color:#3c4c68; }
+.section-title + .note, .section-title + table { border-radius:0 0 10px 10px; margin-top:0; }
+.footer { position:absolute; bottom:0; left:0; right:0; height:92px; display:flex; align-items:center; justify-content:center; gap:90px; color:white; font-size:14px; background:#10296b; padding:0 54px; z-index:2; }
+.footer div:first-child { font-weight:800; text-transform:uppercase; }
+.footer div:last-child { color:#00d084; font-size:20px; font-weight:800; }
+.chartbox { border:1px solid #dfe6f0; border-radius:14px; padding:16px; background:#ffffff; }
 svg { width:100%; height:auto; }
-table { width:100%; border-collapse:collapse; font-size:15px; }
-th, td { border-bottom:1px solid #dbe6ea; padding:10px 8px; text-align:left; vertical-align:top; }
-th { color:#5e7680; text-transform:uppercase; font-size:12px; letter-spacing:0.4px; }
+table { width:100%; border-collapse:collapse; font-size:15px; background:#fff; border:1px solid #dfe6f0; }
+th, td { border-bottom:1px solid #dfe6f0; padding:12px 10px; text-align:left; vertical-align:top; }
+th { color:#526582; text-transform:uppercase; font-size:12px; letter-spacing:0.4px; background:#f5f7fb; }
 .kpi-strip { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
 .checklist li { margin-bottom:10px; }
-.small { font-size:14px; color:#6a8089; }
+.small { font-size:14px; color:#6a778d; }
 .two-col { display:grid; grid-template-columns: 1.2fr 0.8fr; gap:20px; align-items:start; }
-a { color:#0b8f87; text-decoration:none; }
+a { color:#1267d8; text-decoration:none; font-weight:700; }
 </style></head><body>
 <section class="page">
-<div class="header"><div><div class="brand">SMART<small>Smartm2m Compliance Support</small></div></div><div class="page-tag">PAGE 01</div></div>
+<div class="header"><div class="brand"><img class="smart-logo" src="assets/smartm2m_logo.png" alt="SMART"><div class="brand-divider"></div><div class="brand-title">Temperature Monitoring<br>Compliance Report<small>Executive summary, compliance status & key metrics</small></div></div><div class="page-tag"><small>PAGE</small>01</div></div>
 <h1>Executive Compliance Overview</h1>
 <div class="subtitle">Reporting period: 27 Apr 2026 – 03 May 2026</div>
 <div class="section-title">Overall Compliance Status</div>
@@ -66,7 +81,7 @@ a { color:#0b8f87; text-decoration:none; }
 </section>
 
 <section class="page">
-<div class="header"><div><div class="brand">SMART<small>Smartm2m Compliance Support</small></div></div><div class="page-tag">PAGE 02</div></div>
+<div class="header"><div class="brand"><img class="smart-logo" src="assets/smartm2m_logo.png" alt="SMART"><div class="brand-divider"></div><div class="brand-title">Temperature Monitoring<br>Compliance Report<small>Executive summary, compliance status & key metrics</small></div></div><div class="page-tag"><small>PAGE</small>02</div></div>
 <h1>Temperature Trend Analysis</h1>
 <div class="subtitle">Pharmacy — Sensor 08254696</div>
 <div class="chartbox"><svg viewBox="0 0 980 340" aria-label="temperature trend">
@@ -90,7 +105,7 @@ a { color:#0b8f87; text-decoration:none; }
 </section>
 
 <section class="page">
-<div class="header"><div><div class="brand">SMART<small>Smartm2m Compliance Support</small></div></div><div class="page-tag">PAGE 03</div></div>
+<div class="header"><div class="brand"><img class="smart-logo" src="assets/smartm2m_logo.png" alt="SMART"><div class="brand-divider"></div><div class="brand-title">Temperature Monitoring<br>Compliance Report<small>Executive summary, compliance status & key metrics</small></div></div><div class="page-tag"><small>PAGE</small>03</div></div>
 <h1>Excursion Review</h1>
 <div class="subtitle">Repcal Test Lab — 1st floor — Pharmacy</div>
 <div class="section-title">Out-of-range Events</div>
@@ -118,7 +133,7 @@ a { color:#0b8f87; text-decoration:none; }
 </section>
 
 <section class="page">
-<div class="header"><div><div class="brand">SMART<small>Smartm2m Compliance Support</small></div></div><div class="page-tag">PAGE 04</div></div>
+<div class="header"><div class="brand"><img class="smart-logo" src="assets/smartm2m_logo.png" alt="SMART"><div class="brand-divider"></div><div class="brand-title">Temperature Monitoring<br>Compliance Report<small>Executive summary, compliance status & key metrics</small></div></div><div class="page-tag"><small>PAGE</small>04</div></div>
 <h1>Final Compliance Conclusion</h1>
 <div class="section-title">Final Verdict</div>
 <div class="status fail">FAIL</div>
